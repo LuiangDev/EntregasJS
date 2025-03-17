@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Registro de Colaboradores</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body class="p-4">
+    <div class="container mx-auto" data-theme="light">
+      <h1 class="card-title">REGISTRO DE COLABORADORES</h1>
+      <br>
+      <form id="usuarioForm">
+        <h2 class="card-title">Información Personal</h2>
+
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          class="input input-md input-warning"
+          required
+        />
+
+        <label for="apellido">Apellido:</label>
+        <input
+          type="text"
+          id="apellido"
+          class="input input-md input-warning"
+          required
+        />
+
+        <label for="genero">Género:</label>
+        <select id="genero" class="select select-warning" required>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="NoIndicar">Prefiero no indicar</option>
+        </select>
+
+        <label for="fechanacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechanacimiento" class="input input-md input-warning"required />
+
+        <label for="nacionalidad">Nacionalidad:</label>
+        <select id="nacionalidad" class="select select-warning" required>
+          <option value="Peru">Perú</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Mexico">México</option>
+          <option value="Otro">Otro</option>
+        </select>
+
+        <label for="profesion">Profesión:</label>
+        <input
+          type="text"
+          id="profesion"
+          class="input input-md input-warning"
+          required
+        />
+
+        <label for="especialidad">Especialidad:</label>
+        <input
+          type="text"
+          id="especialidad"
+          class="input input-md input-warning"
+          required
+        />
+
+        <h2 class="card-title">Información de Contacto</h2>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input
+          type="email"
+          id="correo"
+          class="input input-md input-warning"
+          required
+        />
+
+        <label for="celular">Celular:</label>
+        <input
+          type="number"
+          id="celular"
+          class="input input-md input-warning"
+          required
+        />
+
+        <h2 class="card-title">Intereses Personales</h2>
+
+        <label for="hobbies">Pasatiempos y Hobbies:</label>
+        <input
+          type="text"
+          id="hobbies"
+          class="input input-md input-warning"
+          required
+        />
+
+        <label for="cancionfavorita">Canción Favorita:</label>
+        <input
+          type="text"
+          id="cancionfavorita"
+          class="input input-md input-warning"
+          required
+        />
+
+        <label for="stickerfavorito">Sticker Favorito:</label>
+        <input
+          type="file"
+          class="file-input file-input-sm file-input-warning"
+          id="stickerfavorito"
+          accept="image/*"
+        />
+
+        <h2 class="card-title">Foto de Perfil</h2>
+
+        <label for="foto">Foto:</label>
+        <input
+          type="file"
+          class="file-input file-input-sm file-input-warning"
+          id="foto"
+          accept="image/*"
+        />
+        <br>
+        <button type="submit" class="btn btn-warning mt-4 w-full">
+          Registrar Usuario
+        </button>
+        <div id="ListaUsuarios" class="mt-6"></div>
+  
+        <button id="GuardarUsuario" class="btn btn-warning mt-4 w-full">
+          Guardar Información del Colaborador
+        </button>
+      </form>
+
+
+    </div>
+
+    <script src="js/main.js"></script>
+</html>
