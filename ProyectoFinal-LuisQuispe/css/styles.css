@@ -1,0 +1,272 @@
+/* Estilos CSS para la aplicación */
+
+/* Variables de color y diseño */
+ :root {
+  --primary: #0366d6;
+  --bg: #f5f5f5;
+  --card: #ffffff;
+  --text: #333333;
+  --break-sm: 480px;
+  --break-md: 768px;
+}
+
+/* 
+  Reset de estilos para eliminar márgenes y paddings por defecto
+  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Estilos generales para el cuerpo de la página
+  */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* 
+  Stilos para la pantalla de inicio
+  */
+.inicio-container {
+  display: flex;
+  height: 100vh;
+}
+.inicio-content,
+.inicio-image {
+  flex: 1;
+}
+.inicio-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--primary);
+  color: #fff;
+}
+.inicio-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.inicio-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+#btn-start {
+  align-self: flex-start;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background: #fff;
+  color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#btn-start:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.inicio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 
+  Estilos para la aplicación principal
+  */
+#app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* 
+  Estilos para el sidebar
+  */
+#sidebar {
+  width: 200px;
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+#sidebar img {
+  max-width: 120px;
+  max-height: 80px;
+  margin-bottom: 1rem;
+}
+#sidebar nav button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+#sidebar nav button.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/*
+  Estilos para el botón de alternar el sidebar
+  */
+#sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* 
+  Estilos para el área de vista principal
+  */
+#view {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: margin 0.3s ease;
+}
+
+/* 
+Estilos para el card de la aplicación
+  */
+.card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+input,
+select,
+button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #024ea1;
+}
+
+/* 
+  
+Estilos para las tablas de saldo e historial
+  */
+.saldo-table,
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.saldo-table th,
+.saldo-table td,
+.history-table th,
+.history-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+}
+.saldo-table th,
+.history-table th {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+@media (max-width: var(--break-md)) {
+  .saldo-table,
+  .history-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* 
+  Estilos para los gráficos
+  */
+.dashboard-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.dashboard-row .card {
+  flex: 1;
+  min-width: 300px;
+}
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/*
+  Estilos para el modal de confirmación
+  */
+.swal2-container {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  z-index: 10000 !important;
+}
+.swal2-popup {
+  z-index: 10001 !important;
+}
+
+/* 
+Off canvas para el sidebar en pantallas pequeñas
+  */
+@media (max-width: var(--break-md)) {
+  #sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+  #sidebar.open {
+    transform: translateX(0);
+  }
+  #sidebar-toggle {
+    display: block;
+  }
+  #view {
+    margin-left: 0;
+  }
+}

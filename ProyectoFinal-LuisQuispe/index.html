@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>CambioXpress</title>
+
+    <!-- Estilos de Libreria SweetAlert2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- Libreria SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <!-- Libreria Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+
+    <!-- Cargamos la librería currency-symbol-map desde Skypack -->
+    <script type="module">
+      import getSymbolFromCurrency from "https://cdn.skypack.dev/currency-symbol-map";
+      window.getSymbolFromCurrency = getSymbolFromCurrency;
+    </script>
+
+    <!-- Conectamos el archivo main.js que contiene la lógica de la aplicación -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
